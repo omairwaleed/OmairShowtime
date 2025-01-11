@@ -6,7 +6,6 @@ import { notifications } from "@mantine/notifications";
 import { usePathname } from "next/navigation";
 import { MdOutlineRemoveCircleOutline } from "react-icons/md";
 import { useRouter } from "next/navigation";
-const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
 type MoviesListProps = {
   movies: Movie[] | undefined;

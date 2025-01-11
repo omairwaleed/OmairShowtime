@@ -1,5 +1,4 @@
 import Movie from "@/types/movie";
-import Image from "next/image";
 import React, { useCallback, useEffect, useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
