@@ -16,7 +16,7 @@ const Sider = ({ toggleSidebar }: Props) => {
       <Image
         src="/images/logo.svg"
         width={250}
-        height={250}
+        height={180}
         alt="Picture of the author"
       />
       <Menu />
