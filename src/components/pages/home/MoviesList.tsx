@@ -29,7 +29,7 @@ const MoviesList = ({ movies, searchTerm, removeMovie }: MoviesListProps) => {
     const debounce = setTimeout(async () => {
       if (searchTerm) {
         const res = await fetch(
-          `https://omair-showtime.vercel.app/api/search?query=${searchTerm}`
+          `${process.env.NEXT_PUBLIC_API_ENDPOINT}/api/search?query=${searchTerm}`
         );
         const data = await res.json();
         setSearchMovies(data.data);
