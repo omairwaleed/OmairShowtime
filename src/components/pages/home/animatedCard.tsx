@@ -71,13 +71,12 @@ const AnimatedCard = ({ movies }: Props) => {
                 transition={{ duration: 0.5 }}
                 className="absolute inset-0"
               >
-                <Image
+                <img
                   src={`https://image.tmdb.org/t/p/w500${movies[currentIndex].backdrop_path}`}
                   alt={movies[currentIndex].title}
                   width={500}
                   height={350}
-                  objectFit="cover"
-                  className="w-full h-full rounded-3xl"
+                  className="w-full h-full rounded-3xl object-cover"
                 />
               </motion.div>
             </AnimatePresence>
