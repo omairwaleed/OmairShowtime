@@ -78,8 +78,6 @@ const AnimatedCard = ({ movies }: Props) => {
                   height={350}
                   objectFit="cover"
                   className="w-full h-full rounded-3xl"
-                  unoptimized={true}
-                  onLoadingComplete={() => setIsLoadingImage(false)}
                 />
               </motion.div>
             </AnimatePresence>

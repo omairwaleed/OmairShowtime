@@ -6,10 +6,8 @@ import { notifications } from "@mantine/notifications";
 import { usePathname } from "next/navigation";
 import { MdOutlineRemoveCircleOutline } from "react-icons/md";
 import { useRouter } from "next/navigation";
-const apiUrl =
-  process.env.NODE_ENV === "production"
-    ? `https://${process.env.VERCEL_URL}`
-    : "http://192.168.56.1:3000";
+const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+
 type MoviesListProps = {
   movies: Movie[] | undefined;
   searchTerm: string;

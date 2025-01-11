@@ -8,7 +8,7 @@ First, install dependencies:
 bun i
 ```
 
-First, run the development server:
+then, run the development server:
 
 ```bash
 bun --bun run dev
