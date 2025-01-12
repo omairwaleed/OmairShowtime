@@ -11,14 +11,14 @@ const AnimatedCard = ({ movies }: Props) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isLoadingImage, setIsLoadingImage] = useState(true);
   const [direction, setDirection] = useState("next"); // Direction state
+  const [isClient, setIsClient] = useState(false);
 
   const handleNext = useCallback(() => {
     setDirection("next");
     setCurrentIndex((prev) => (prev + 1) % 3);
   }, []);
   const handlePrevious = useCallback(() => {
-    setDirection("previous");
-
+    setDirection("prev");
     setCurrentIndex((prev) => {
       const prevoius = prev - 1;
       if (prevoius === -1) return 2;
@@ -29,8 +29,13 @@ const AnimatedCard = ({ movies }: Props) => {
     setIsLoadingImage(false);
     setInterval(() => {
       handleNext();
-    }, 2500);
+    }, 5000);
   }, [handleNext]);
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) return null;
 
   return (
     <div className="w-full flex bg-green-200s justify-center my-5">
