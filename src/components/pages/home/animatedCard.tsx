@@ -3,6 +3,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import { Skeleton } from "@mantine/core";
+import Image from "next/image";
 
 type Props = {
   movies: Movie[];
@@ -11,7 +12,6 @@ const AnimatedCard = ({ movies }: Props) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isLoadingImage, setIsLoadingImage] = useState(true);
   const [direction, setDirection] = useState("next"); // Direction state
-  const [isClient, setIsClient] = useState(false);
 
   const handleNext = useCallback(() => {
     setDirection("next");
@@ -31,12 +31,6 @@ const AnimatedCard = ({ movies }: Props) => {
       handleNext();
     }, 5000);
   }, [handleNext]);
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  if (!isClient) return null;
-
   return (
     <div className="w-full flex bg-green-200s justify-center my-5">
       <div className="w-4/5 md:w-1/2 h-[350]  ">
@@ -75,7 +69,7 @@ const AnimatedCard = ({ movies }: Props) => {
                 transition={{ duration: 0.5 }}
                 className="absolute inset-0"
               >
-                <img
+                <Image
                   src={`https://image.tmdb.org/t/p/w500${movies[currentIndex].backdrop_path}`}
                   alt={movies[currentIndex].title}
                   width={500}
